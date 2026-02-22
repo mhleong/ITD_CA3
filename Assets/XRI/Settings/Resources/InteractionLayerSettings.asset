@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LayerNames:
   - Default
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Bishop
+  - King
+  - Queen
+  - ChessSet
+  - Key1
+  - Key2
+  - Key3
   - 
   - 
   - 

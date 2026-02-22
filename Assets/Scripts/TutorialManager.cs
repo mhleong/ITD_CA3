@@ -17,6 +17,9 @@ public class TutorialManager : MonoBehaviour
     [Header("Congrats UI")]
     public GameObject congratsUI;
 
+    [Header("Chess Activity to Unlock After Tutorial")]
+    public GameObject chessActivity;
+
     private int currentTriggerIndex = 0;    // Tracks which trigger zone the player needs to clear next
     private int teleportStep = 0;   // 0 = not started, 1 = cleared triggers and can teleport to dest 1,
                                     //  2 = teleported to dest 1 and can teleport to dest 2,
@@ -25,6 +28,8 @@ public class TutorialManager : MonoBehaviour
 
     private void Start()
     {
+        if (chessActivity != null) chessActivity.SetActive(false);
+
         // Enable only Trigger 1
         for (int i = 0; i < triggerZones.Length; i++)
             triggerZones[i].SetActive(i == 0);
@@ -81,6 +86,7 @@ public class TutorialManager : MonoBehaviour
             // Finished tutorial
             if (congratsUI) congratsUI.SetActive(true);
             teleportStep = 3;
+            TutorialCompleted();
         }
     }
 
@@ -88,5 +94,10 @@ public class TutorialManager : MonoBehaviour
     public void DismissCongrats()
     {
         if (congratsUI) congratsUI.SetActive(false);   
+    }
+
+    private void TutorialCompleted()
+    {
+        if (chessActivity != null) chessActivity.SetActive(true);
     }
 }
