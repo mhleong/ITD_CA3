@@ -14,7 +14,7 @@ public class Login : MonoBehaviour
         if (usernameInput.text == "123" && passwordInput.text == "123")
         {
             feedbackText.text = "Login Successful!";
-            SceneManager.LoadScene("SampleScene");
+            SceneManager.LoadScene("TutorialLevel");
             Debug.Log("Login Successful!");
         }
         else
